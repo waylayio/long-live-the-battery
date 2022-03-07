@@ -41,6 +41,7 @@ def load_batches_to_dict(amount_to_load=3):
 
         for i, bk in enumerate(batch1_keys):
             batch1[bk]['cycle_life'] = batch1[bk]['cycle_life'] + add_len[i]
+            batch1[bk]['charge_policy'] = batch1[bk]['charge_policy']
             for j in batch1[bk]['summary'].keys():
                 if j == 'cycle':
                     batch1[bk]['summary'][j] = np.hstack((batch1[bk]['summary'][j], batch2[batch2_keys[i]]['summary'][j] + len(batch1[bk]['summary'][j])))
